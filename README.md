@@ -16,7 +16,7 @@ Check to see how o2 varies throughout all time to see if pattern emerges despite
 ** Data processing discussion
 We will store output CSV files and assuming we don't run out of space original data files of whatever types on the shared onedrive
 
-**Plan for producing training data
+** Plan for producing training data
 Pull out mean, max, and min from sonar data
 Reprocess seismic data (three components, x, y, z) to 1 hour chunks with mean max min amplitude, 1st dominant frquency and spectral power associated with that frequency.
 Use tidal data to denoise other data
