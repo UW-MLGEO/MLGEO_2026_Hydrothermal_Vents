@@ -1,5 +1,6 @@
 # MLGEO_2026_Hydrothermal_Vents
 Repository for Southern Hydrate Ridge team Michael, Christina, Isaac, and David
+
 Link to onedrive: https://uwnetid-my.sharepoint.com/:f:/r/personal/lolson04_uw_edu/Documents/Submarine_volcanoes_onedrive?csf=1&web=1&e=v089IY
 
 Notes from Wed 2/11 Class meeting:
