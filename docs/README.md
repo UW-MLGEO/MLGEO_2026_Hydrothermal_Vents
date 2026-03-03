@@ -24,7 +24,7 @@ All data are collected from the OOI RCA infrastructure at Southern Hydrate Ridge
 #### Input Features (Predictors):
 
 1. **Seismic Data**
-   - Station: OO.HYS14 (and other HYS1* stations)
+   - Station: OO.HYS14
    - Channels: HHZ, HHN, HHE (200 Hz sampling rate)
    - Three-component broadband seismometer data
    - Sensitive to ground motion, tremor, and fluid flow dynamics
@@ -37,14 +37,15 @@ All data are collected from the OOI RCA infrastructure at Southern Hydrate Ridge
 
 3. **Pressure Data**
    - Bottom pressure recorders (BPR)
-   - Sensitive to tidal loading and fluid pressure changes
-   - Indicator of subsurface pore pressure dynamics
+   - Sensitive to tidal loading and seasonality trends
+   - Used to detrend average bubble plume velocity
 
 #### Target Variables (Labels):
 
-4. **Mass Spectrometer Data**
+4. **Residual Gas Analyzer Data**
    - Methane (CH₄) concentration (nM/L)
    - Hydrogen (H₂) concentration (nM/L)
+   - Hydrogen Sulfide (H₂S) concentration (mM/L)
    - Derived from partial pressure measurements using Henry's Law
    - From: `methane_concentration_2017.csv`
 
@@ -52,7 +53,7 @@ All data are collected from the OOI RCA infrastructure at Southern Hydrate Ridge
 
 ### Temporal Alignment
 
-All data streams are aligned to **22-second time windows** corresponding to mass spectrometer measurement timestamps. This window size balances:
+All data streams are aligned to **22-second time windows** corresponding to RGA measurement timestamps. This window size balances:
 - Sufficient seismic signal for spectral analysis
 - ADCP measurement intervals
 - Computational efficiency
@@ -196,11 +197,15 @@ The target variable (methane concentration) exhibits a skewed distribution. We a
 ### Random Forest Performance
 
 - Cross-validation R²: [To be filled with results]
-- Test set R²: [To be filled with results]
+- Test set R²: 90%
 - Test set RMSE: [To be filled with results]
 
 **Top Feature Importances**:
-- [To be filled with analysis]
+- Dominant spectral power from seismic East component (E_power1) - 35%
+- Dominant spectral frequency from seismic East component (E_freq1) - 10%
+- Average amplitude from seismic East component (E_mean) - 9%
+- Median bubble plume velocity from acoustic velocity profiler (adcp_median)
+- Mean bubble plume velocity from acoustic velocity profiler (adcp_mean) 
 
 ### CNN Performance
 
@@ -345,25 +350,26 @@ cnn_model.load_state_dict(checkpoint['model_state_dict'])
 ### Future Directions
 
 1. **Multi-year Training**: Incorporate data from 2014-2020
-2. **Multi-station Ensemble**: Use all HYS1* stations for spatial context
+2. **Multi-station Ensemble**: Use all HYS1* stations, even at 8Hz sampling, to expand coverage for low-frequency events.
 3. **Additional Features**: 
    - Temperature and salinity from CTD sensors
    - Tidal phase and magnitude
-   - Seafloor imagery (if available)
 4. **Transfer Learning**: Apply models to other seep sites
 5. **Real-time Deployment**: Implement models in OOI cyberinfrastructure
 6. **Physics-informed ML**: Incorporate fluid dynamics constraints
 
 ## Contributors
 
-[Your names/affiliations here]
+Christina Stuhl
+David Lovett
+Michael Hemmett
 
 ## Acknowledgments
 
 - **Ocean Observatories Initiative (OOI)**: Data infrastructure and access
-- **IRIS Data Management Center**: Seismic waveform services
-- **NSF**: OOI funding and support
-- **[Your institution/course]**: Computational resources and guidance
+- **EarthScope Consortium**: Seismic waveform services
+- **University of Washington Earth and Space Sciences**: Computational resources
+- **Dr. Akshay Mehra and Henry Yuan**: Guidance and project feedback
 
 ## References
 
