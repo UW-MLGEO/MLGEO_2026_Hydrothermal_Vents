@@ -5,7 +5,7 @@ import time
 from urllib.parse import urljoin
 
 # --- DESTINATION ---
-SAVE_DIR = r"C:\Users\David\Documents\School Stuff\UW Things\Classwork\ESS 469\MLGEO_Hydrothermal_Vents\masspa_2017_datadump"
+SAVE_DIR = r"C: 469\MLGEO_Hydrothermal_Vents\masspa_2017_datadump"
 BASE_URL = "https://rawdata.oceanobservatories.org/files/RS01SUM2/MJ01B/MASSPA101/"
 
 if not os.path.exists(SAVE_DIR):
