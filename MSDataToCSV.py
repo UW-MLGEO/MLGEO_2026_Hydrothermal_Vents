@@ -3,7 +3,7 @@ import pandas as pd
 from tqdm import tqdm
 from datetime import datetime
 
-INPUT_DIR = r"C:\Users\David\Documents\School Stuff\UW Things\Classwork\ESS 469\MLGEO_Hydrothermal_Vents\masspa_2017_datadump"
+INPUT_DIR = r"C:"
 OUTPUT_FILE = "MASSPA_2017_Time_Series_Ready.csv"
 
 def parse_file(file_path):
