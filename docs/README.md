@@ -114,9 +114,8 @@ This project initially implemented **two complementary modeling strategies**, ea
 **Model Architecture**:
 - Algorithm: Random Forest Regressor (scikit-learn)
 - Configuration:
-  - 400 trees
+  - 800 trees
   - Max depth: 12
-  - Min samples split: 5
   - Min samples leaf: 2
   - Max features: 'sqrt'
 - Validation: 5-fold cross-validation
@@ -138,22 +137,6 @@ This project initially implemented **two complementary modeling strategies**, ea
 **Model Architecture**:
 - Framework: PyTorch
 - Architecture: 1D CNN Regressor
-  - Input layer: Reshape features to (batch, 1, n_features)
-  - Convolutional blocks:
-    - Conv1D: 1 → 64 channels, kernel=3
-    - BatchNorm + ReLU + Dropout(0.2)
-    - Conv1D: 64 → 128 channels, kernel=3
-    - BatchNorm + ReLU + Dropout(0.2)
-    - Conv1D: 128 → 64 channels, kernel=3
-    - BatchNorm + ReLU + Dropout(0.2)
-  - Global Average Pooling
-  - Fully connected layers: 64 → 128 → 64 → 32 → 1
-  - Dropout(0.3) in FC layers
-- Training:
-  - Optimizer: Adam (lr=0.001)
-  - Loss: MSE (Mean Squared Error)
-  - Epochs: 100 with early stopping (patience=15)
-  - Batch size: 32
 - Validation: 5-fold cross-validation
 
 **Advantages**:
