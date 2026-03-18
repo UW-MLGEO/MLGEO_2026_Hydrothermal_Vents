@@ -357,6 +357,8 @@ MacLeod, L. M. F., & Wilcock, W. S. D. (2025). Nonseismic short-duration events 
 
 Marcon, Y., Kelley, D. S., Thornton, B., Manalang, D., & Bohrmann, G. (2021). Variability of natural methane bubble release at Southern Hydrate Ridge. Geochemistry, Geophysics, Geosystems, 22, e2021GC009894. [https://doi.org/10.1029/2021GC009894](https://doi.org/10.1029/2021GC009894)
 
+Philip, B. T., A. R.Denny, E. A.Solomon, and D. S. Kelley (2016). Time-series measurements of bubble plume variability and water column methane distribution above Southern Hydrate Ridge, Oregon, Geochem. Geophys. Geosyst., 17, 1182–1196, doi:10.1002/2016GC006250.
+
 Reeburgh, W. S. (2007). Oceanic methane biogeochemistry. Chemical Reviews, 107(2), 486–513. [https://doi.org/10.1021/cr050362v](https://doi.org/10.1021/cr050362v)
 
 Römer, M., Sahling, H., Pape, T., Bahr, A., Feseker, T., Wintersteller, P., & Bohrmann, G. (2014). Microbial abundance and diversity patterns associated with sediments and carbonates from methane seep environments of Hydrate Ridge, Oregon. Frontiers in Marine Science, 1, Article 44. [https://doi.org/10.3389/fmars.2014.00044](https://doi.org/10.3389/fmars.2014.00044)
