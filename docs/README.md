@@ -188,7 +188,7 @@ MLGEO_2026_Methane_Seeps/
 │   ├── time_series_cnn.ipynb           # CNN on raw time series
 │   ├── shr_seismicity*.ipynb           # Seismic and short-duration event exploration
 │   ├── MSDataToCSV.py                  # MASSPA data-to-CSV utilities
-│   └── ...                             # Additional EDA and figure notebooks
+│   └── ...                             # Additional data pull and figure notebooks
 ├── figures/                            # Exported figures for writeup/docs
 ├── docs/
 │   ├── README.md                       # This file (project overview)
