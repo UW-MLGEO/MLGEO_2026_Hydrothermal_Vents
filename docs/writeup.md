@@ -18,16 +18,7 @@ Southern Hydrate Ridge (SHR) is a methane seep site in the Northeast Pacific Oce
 
 ![figure1_map.png](../figures/figure1_map.png)
 
-**Figure 1:**  Three maps of Southern Hydrate Ridge that provide visual and spatial context for our project and just exactly how small our special extent actually is.
-
-(A) Ocean Observatories Initiative infographic showing the Cable Array, Axial Seamount, Portland, and each important node on the Array. 
-
-(B) Topographic and Bathymetric map from the Oregon State Library at 1:500,000 scale zoomed in on Southern Hydrate Ridge itself. 
-
-(C) A topographic map colored by altitude from the OOI website, ultimately provided by a previous UW team. This figure gives us a very detailed picture of SHR’s Summit 2 local structure as well as instrument locations. 
-
-(D) Figure (C) but zoomed in on Einstein’s grotto, showing our instruments; MASSPA101 is the Residual Gas analyzer, MJ01B is the junction box with the bubble velocity meter and pressure gauge.
-
+**Figure 1:**  Three maps of Southern Hydrate Ridge that provide visual and spatial context for our project and just exactly how small our special extent actually is. (A) Ocean Observatories Initiative infographic showing the Cable Array, Axial Seamount, Portland, and each important node on the Array. (B) Topographic and Bathymetric map from the Oregon State Library at 1:500,000 scale zoomed in on Southern Hydrate Ridge itself. (C) A topographic map colored by altitude from the OOI website, ultimately provided by a previous UW team. This figure gives us a very detailed picture of SHR’s Summit 2 local structure as well as instrument locations. (D) Figure (C) but zoomed in on Einstein’s grotto, showing our instruments; MASSPA101 is the Residual Gas analyzer, MJ01B is the junction box with the bubble velocity meter and pressure gauge. Figure and caption contributed by David Lovett for ESS 469 multipanel figure assignment.
 
 Data from the non-commercial RGA instrument is sparse across its years of operation, with a short expected lifetime of one year for the instrument. This poses a significant challenge for monitoring methane availability in this unique ecosystem. Meanwhile, commercial, physical instruments such as pressure gauges, ADCP, and seismometers collect continuous time series data at the same site, with expected lifetims of up to five years. To address the challenge of limited chemical monitoring, we develop a fast machine learning (ML) algorithm mapping robust physical measurements to chemical concentrations at SHR. The algorithm serves to map nonlinear relationships between acoustic backscatter magnitude and short-duration seismic events and frequency content to relevant dissolved gases constraining seep chemistry across time, with potential for future real-time implementation on seafloor instruments.
 
@@ -38,26 +29,13 @@ The RGA mass spectrometer instrument uses a permeable membrane to intake seawate
 
 ![figure2_chemistry.png](../figures/figure2_chemistry.png)
 
-**Figure 2:** RGA Data Acquisition. A comprehensive overview of the extraction methods for the TGA at SHR Summit A. Each RGA .txt file included a spectra of values associated with the partial pressure (Torr) of a specific gas identified by an atomic mass (amu).
-
-(A) Features a single .txt file from one measurement taken by the RGA in 2017, and includes markers identifying the gases selected for this study.
-
-(B) Includes the Henry's Law constant values $k_{H}$ that were used to convert each partial pressure into a concnetration that could be understood.
-
-(C) A time series of 2017 without interpolation, i.e. a NaN value does not equal zero so when the instrument is not active no data is displayed.
-
-(D) A check verifying that the calculated values obey Henry's Law. Each trend obeys the law $C = k_{H} * P$, such that $k_{H}$ is always the Henry's Law constant provided in Table (B).
-
-This concludes the process by which concnetration data was collected from the RGA.
-
+**Figure 2:** RGA Data Acquisition. A comprehensive overview of the extraction methods for the TGA at SHR Summit A. Each RGA .txt file included a spectra of values associated with the partial pressure (Torr) of a specific gas identified by an atomic mass (amu). (A) Features a single .txt file from one measurement taken by the RGA in 2017, and includes markers identifying the gases selected for this study. (B) Includes the Henry's Law constant values $k_{H}$ that were used to convert each partial pressure into a concnetration that could be understood. (C) A time series of 2017 without interpolation, i.e. a NaN value does not equal zero so when the instrument is not active no data is displayed. (D) A check verifying that the calculated values obey Henry's Law. Each trend obeys the law $C = k_{H} * P$, such that $k_{H}$ is always the Henry's Law constant provided in Table (B). This concludes the process by which concnetration data was collected from the RGA. Figure and caption contributed by Christina Stuhl for ESS 469 multipanel figure assignment.
 
 At SHR, the dissolved gases that best constrain seep chemistry are methane gas ($CH_{4}$), a direct product of methanogenesis from the seep methane hydrate breaking down, hydrogen sulfide ($H_{2}S$), a product of the central chemosynthetic process for which methane is a reactant (Sahling et al., 2002), and hydrogen gas ($H_{2}$). Three other trace gases that constrain the seawater chemistry at the seep site are nitrogen gas ($N_{2}$), relevant for isolating marine mammal signatures, oxygen gas ($O_{2}$), and carbon dioxide ($CO_{2}$). These gases and their role in methane sources and sinks at the seep site are included in Table 1.
 
-
 ![table1_chemistry.png](../figures/table1_chemistry.png)
 
-**Table 1:** Dominant aqueous reactions that serve as sources and sinks of methane gas, hydrogen sulfide, and nitrogen gas at SHR.
-
+**Table 1:** Dominant aqueous reactions that serve as sources and sinks of methane gas, hydrogen sulfide, and nitrogen gas at SHR. Table contributed by Christina Stuhl.
 
 ### Physical-Chemical Correlation
 ADCP instruments deployed at SHR measure seawater velocity at methane plume sites using active sonar. Radar pulses reflect off of gas bubbles and particles in the seawater to record an ambient seawater velocity across time, (OOI). The strength of the acoustic backscatter magnitude reflected off of plume bubbles has been established as a nonlinear proxy for the concentration of methane gas in seawater, (Phillip et al., 2016).
@@ -79,17 +57,9 @@ Combining the nine seismic features, three for each component, plus two features
 
 The training dataset captured a variety of events that the ΜL model will distinguish and constrain. First, explosion-like non-seismic events occur at the same time as dramatic increases in acoustic velocity and methane concentration. These likely capture SDE methane venting, the primary event type for the ML model to constrain. Secondly, unrelated SDEs that do not correspond with changes in the acoustic velocities or seep chemistry. Third, a high concnetration of fin whale calls during migration events along the Oregon coast in the end of January. This corresponds to a dramatic peak in nitrogen concentration, but no change in seep dynamics. This captures whale waste and bioturbation, wherein whales dive deep for food and resurface, thereby vertically cycling the water column.
 
-
 ![figure3_data.png](../figures/figure3_data.png)
 
-**Figure 3:** A variety of non-seismic SDEs compared to mean acoustic velocity (gold), with methane (green), and nitrogen concnetrations (blue). SDE samples are seconds-long, extracted from within the highlighted time periods shown on the right.
-
-(A) A rumbling seismic signal uncorrealted to seep activity.
-
-(B) Whale calls on top of a potnetial. SDE linked in time with a sharp increase in methane concentration and above average acoustic velocity. This could signify a seep event.
-
-(C) Significant whale activity corresponding with an increase in nitrogen concnetration, potentially due to whale waster or bioturbation.
-
+**Figure 3:** A variety of non-seismic SDEs compared to mean acoustic velocity (gold), with methane (green), and nitrogen concnetrations (blue). SDE samples are seconds-long, extracted from within the highlighted time periods shown on the right. (A) A rumbling seismic signal uncorrealted to seep activity. (B) Whale calls on top of a potnetial. SDE linked in time with a sharp increase in methane concentration and above average acoustic velocity. This could signify a seep event. (C) Significant whale activity corresponding with an increase in nitrogen concnetration, potentially due to whale waster or bioturbation.
 
 ## Machine Learning Implementation
 We developed two distinct ML model implementations in tandem: first, a simple SciKitLearn random forest (RF) model using the extracted features described above as inputs, and the second, a PyTorch convolutional neural network (CNN) model trained on extracted acoustic features and full seismic timeseries data for the corresponding 22-second period. Preliminary testing showed promising results from the RF model, with poor performance from the CNN model; thus, the RF model was chosen for the final implementation.
@@ -101,21 +71,17 @@ We used a training, validation, and test set split of 70%, 15%, and 15%, respect
 ## Results and Discussion
 The RF model showed an average training set and validation set $R^{2}$ accuracies of approximately 90%, with a test set accuracy of approximately 85%. The small gap between training, validation, and test set accuracies shows that overfitting was minimized while maintaining a high performance on unseen data. This held true for all dissolved gas concentrations except carbon dioxide, which showed a model accuracy of less than 50% and a large gap in performance between the training, validation, and test sets. This suggests that the extracted physical features largely capture the variance in the seep chemistry related to methane venting signals, but does not constrain carbon dioxide concentration that is likely driven by other factors not present in the training features; thus, the model overtrains on the carbon dioxide target but performs well on other chemcial concentrations.
 
-
 ![figure4_accuracy.png](../figures/figure4_accuracy.png)
 
 **Figure 4:** RF model accuracy for all six dissolved gas concentrations across training, K-fold validation, and test sets.
 
-
 By analyzing model residuals across the training, validation, and test sets, it is clear that methane gas and hydrogen sulfide gas show symmetric, sharp peaks with minimal residuals. The interpretation is that the model is accurately predicting these two gas concentrations, which are the most significant for constraining seep activity. The other four trace gases show irregular distributions, long tails, and large residuals, suggesting the RF model often inaccurately predicts values for these concentrations.
-
 
 ![figure5_residuals.png](../figures/figure5_residuals.png)
 
 **Figure 5:** RF model residuals for all six dissolved gas concentrations across training, K-fold validation, and test sets.
 
 We then prepared physical inputs from January 2016, a month for which there is little RGA data, extracting 22-second seismic features every five minutes across the month to reduce computational load. After predicting chemical concentrations for January 2016 with the trained RF model, output distributions show little fluctuation and a small spread of concentrations. Without additional RGA data to evaluate model accuracy and residuals, the model performance in this unseen time period remains ambiguous. Based on the results in 2017, the model performance may be well-constrained, showing there is no significant methane venting across the month. Further testing is needed to confirm the model's generalizability to other time periods and datasets.
-
 
 ![figure6_pred.png](../figures/figure6_pred.png)
 
@@ -149,6 +115,9 @@ Treude, T., Boetius, A., Knittel, K., Wallmann, K., & Jørgensen, B. B. (2003). 
 Tryon, M. D., Brown, K. M., & Torres, M. E. (2001). Complex flow patterns through Hydrate Ridge and their impact on seep biota. Geophysical Research Letters, 28(15), 2863–2866. [https://doi.org/10.1029/2000GL012566](https://doi.org/10.1029/2000GL012566)
 
 Luff, R., Wallmann, K., Aloisi, G., et al. (2008). Miniaturized biosignature analysis reveals implications for the formation of cold seep carbonates at Hydrate Ridge (off Oregon, USA). Biogeosciences, 5, 731–741.
+
+## AI Usage Statement
+Throughout this project, Claude Sonnet 4.5 was used for debugging, initial formatting for data pull and plotting scripts, and for GitHub documentation and restructuring. See AI.md for more information.
 
 
 
