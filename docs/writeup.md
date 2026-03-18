@@ -19,6 +19,7 @@ Southern Hydrate Ridge (SHR) is a methane seep site in the Northeast Pacific Oce
 ![figure1_map.png](figure1_map.png)
 
 **Figure 1:**  Three maps of Southern Hydrate Ridge that provide visual and spatial context for our project and just exactly how small our special extent actually is.
+
 (A) Ocean Observatories Initiative infographic showing the Cable Array, Axial Seamount, Portland, and each important node on the Array. 
 
 (B) Topographic and Bathymetric map from the Oregon State Library at 1:500,000 scale zoomed in on Southern Hydrate Ridge itself. 
@@ -38,13 +39,14 @@ The RGA mass spectrometer instrument uses a permeable membrane to intake seawate
 ![figure2_chemistry.png](figure2_chemistry.png)
 
 **Figure 2:** RGA Data Acquisition. A comprehensive overview of the extraction methods for the TGA at SHR Summit A. Each RGA .txt file included a spectra of values associated with the partial pressure (Torr) of a specific gas identified by an atomic mass (amu).
+
 (A) Features a single .txt file from one measurement taken by the RGA in 2017, and includes markers identifying the gases selected for this study.
 
 (B) Includes the Henry's Law constant values $k_{H}$ that were used to convert each partial pressure into a concnetration that could be understood.
 
 (C) A time series of 2017 without interpolation, i.e. a NaN value does not equal zero so when the instrument is not active no data is displayed.
 
-(D) A check verifying that the calcualted values obey Henry's Law. Each trend obeys the law $C = k_{H} * P$, such that $k_{H}$ is always the Henry's Law constant provided in Table (B).
+(D) A check verifying that the calculated values obey Henry's Law. Each trend obeys the law $C = k_{H} * P$, such that $k_{H}$ is always the Henry's Law constant provided in Table (B).
 
 This concludes the process by which concnetration data was collected from the RGA.
 
@@ -81,6 +83,7 @@ The training dataset captured a variety of events that the ΜL model will distin
 ![figure3_data.png](figure3_data.png)
 
 **Figure 3:** A variety of non-seismic SDEs compared to mean acoustic velocity (gold), with methane (green), and nitrogen concnetrations (blue). SDE samples are seconds-long, extracted from within the highlighted time periods shown on the right.
+
 (A) A rumbling seismic signal uncorrealted to seep activity.
 
 (B) Whale calls on top of a potnetial. SDE linked in time with a sharp increase in methane concentration and above average acoustic velocity. This could signify a seep event.
